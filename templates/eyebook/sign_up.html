@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>EyeBook</title>
+    <link rel="stylesheet" href="{% static 'css/sign_up.css' %}">
+  </head>
+  <body>
+    <div class="sign_up-box">
+      <h1>Sign Up</h1>
+      <form class="" action="/eyebook/sign-up" method="post">
+        {% csrf_token %}
+      <div class="textbox">
+        <i class="fa fa-user" aria-hidden="true"></i>
+        <input type="text" id="name" placeholder="Full Name" name="name" value="" autocomplete="off" required >
+      </div>
+      <div class="textbox">
+        <i class="fa fa-envelope" aria-hidden="true"></i>
+        <input type="email" id="email" placeholder="Email Id" name="email" value="" autocomplete="off" required>
+      </div>
+      <div class="textbox">
+        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+        <input type="password" id="pwd1" placeholder="Password" name="password1" value="" autocomplete="off" required>
+      </div>
+      <div class="textbox">
+        <i class="fa fa-key" aria-hidden="true"></i>
+        <input type="password" id="pwd2" placeholder="Retype-Password" name="password2" value="" autocomplete="off" required>
+      </div>
+      <input class="btn" type="Submit" name="" value="Sign up">
+      </form>
+      <div class="msg" style="color:red;">
+        <b><i>{{msg}}</i></b>
+      </div>
+    </div>
+  </body>
+</html>
